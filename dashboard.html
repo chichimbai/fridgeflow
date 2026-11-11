@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мой холодильник — FridgeFlow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body class="page-fridge">
+    <div class="app">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M11.8 21c-4.6-5.1-6.4-9.1-3.5-13.3C12.8 8.4 16.2 12 16.8 16.4c-.9.2-1.9.6-2.8 1.2-.6.5-1.4.9-2.2 1.4Z"
+            />
+            <path
+              fill="currentColor"
+              opacity="0.72"
+              d="M12.1 20.7c1.3-3.9 4-6.7 8.2-7.7-.9 4.7-3.6 8.2-8.2 9v-1.3Z"
+            />
+          </svg>
+          <span>FridgeFlow</span>
+        </a>
+
+        <nav class="side-nav" aria-label="Разделы">
+          <a href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 4.2 4 10.4V20h5.2v-5.2h5.6V20H20v-9.6L12 4.2Z"
+              />
+            </svg>
+            Главная
+          </a>
+          <a href="dashboard.html" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M7 3.5h10a2 2 0 0 1 2 2V20l-2.2-1.4L14.6 20l-2.6-1.4L9.4 20l-2.2-1.4L5 20V5.5a2 2 0 0 1 2-2Zm1.2 5h7.6v1.6H8.2V8.5Zm0 3.4h7.6v1.6H8.2v-1.6Z"
+              />
+            </svg>
+            Мой холодильник
+          </a>
+          <a href="recipes.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M5 10.2h14v1.1c0 3.6-3.1 6.5-7 6.5s-7-2.9-7-6.5v-1.1Zm1.8-3.4h10.4c-.3-1.7-1.8-2.8-5.2-2.8s-4.9 1.1-5.2 2.8ZM8 19.4h8v1.4H8v-1.4Z"
+              />
+            </svg>
+            Рецепты
+          </a>
+          <a href="reviews.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5Z" />
+            </svg>
+            Отзывы
+          </a>
+          <a href="cabinet.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 12.2a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8ZM5.2 19.2c.7-3 3.4-4.8 6.8-4.8s6.1 1.8 6.8 4.8v.8H5.2v-.8Z"
+              />
+            </svg>
+            Личный кабинет
+          </a>
+        </nav>
+
+        <p class="sidebar-note">Меньше отходов.<br />Больше пользы.</p>
+      </aside>
+
+      <main class="dashboard">
+        <header class="greeting">
+          <p class="eyebrow">FridgeFlow</p>
+          <h1>Привет, <span id="user-name">Алия</span>!</h1>
+          <form id="name-form" class="name-form" hidden>
+            <label>
+              Имя
+              <input name="userName" type="text" required maxlength="40" />
+            </label>
+            <div class="form-actions">
+              <button class="action" type="submit">Сохранить</button>
+              <button class="action action-quiet" id="cancel-name" type="button">Отмена</button>
+            </div>
+          </form>
+          <button class="action action-quiet" id="rename" type="button">Изменить имя</button>
+          <p id="fridge-status">Твой холодильник в порядке</p>
+        </header>
+
+        <section class="counters" aria-label="Счётчики продуктов">
+          <article class="counter" tabindex="0">
+            <strong id="count-total">0</strong>
+            <span>Всего продуктов</span>
+            <div class="counter-extra">
+              <div class="counter-extra-inner">
+                <p class="counter-rule" id="rule-total"></p>
+                <ul class="counter-items" id="items-total"></ul>
+              </div>
+            </div>
+          </article>
+          <article class="counter counter-soon" tabindex="0">
+            <strong id="count-soon">0</strong>
+            <span>Скоро испортятся</span>
+            <div class="counter-extra">
+              <div class="counter-extra-inner">
+                <p class="counter-rule" id="rule-soon"></p>
+                <ul class="counter-items" id="items-soon"></ul>
+              </div>
+            </div>
+          </article>
+          <article class="counter counter-used" tabindex="0">
+            <strong id="count-used">0</strong>
+            <span>Использовано</span>
+            <div class="counter-extra">
+              <div class="counter-extra-inner">
+                <p class="counter-rule" id="rule-used"></p>
+                <ul class="counter-items" id="items-used"></ul>
+              </div>
+            </div>
+          </article>
+          <article class="counter counter-soon" tabindex="0">
+            <strong id="count-almost">0</strong>
+            <span>Вот-вот просрочится</span>
+            <div class="counter-extra">
+              <div class="counter-extra-inner">
+                <p class="counter-rule" id="rule-almost"></p>
+                <ul class="counter-items" id="items-almost"></ul>
+              </div>
+            </div>
+          </article>
+          <article class="counter counter-expired" tabindex="0">
+            <strong id="count-expired">0</strong>
+            <span>Просрочено</span>
+            <div class="counter-extra">
+              <div class="counter-extra-inner">
+                <p class="counter-rule" id="rule-expired"></p>
+                <ul class="counter-items" id="items-expired"></ul>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <div class="workspace">
+          <section class="panel" aria-labelledby="products-title">
+            <div class="panel-head">
+              <h2 id="products-title">Продукты, требующие внимания</h2>
+            </div>
+
+            <form id="product-form" class="product-form">
+              <h3 id="form-title">Добавить продукт</h3>
+              <label>
+                Название
+                <input name="name" type="text" required maxlength="60" placeholder="Например, хлеб" />
+              </label>
+              <div class="amount-row">
+                <label>
+                  Вес или объём
+                  <input name="amount" type="number" min="0.1" step="0.1" required />
+                </label>
+                <label>
+                  Единица
+                  <select name="unit">
+                    <option value="g">г</option>
+                    <option value="kg">кг</option>
+                    <option value="ml">мл</option>
+                    <option value="l">л</option>
+                    <option value="pcs">шт</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                Срок годности
+                <input name="expiry" type="date" required />
+              </label>
+              <label>
+                Цена, необязательно
+                <input name="price" type="number" min="0" step="0.01" placeholder="Можно не указывать" />
+              </label>
+              <button class="action action-quiet" id="toggle-list" type="button" aria-expanded="false" aria-controls="product-list">
+                Развернуть список
+              </button>
+              <div class="form-actions">
+                <button class="action" type="submit">Добавить</button>
+                <div class="recommend" id="recommend">
+                  <button class="action action-quiet" id="recommend-toggle" type="button" aria-expanded="false" aria-controls="recommend-panel">
+                    Рекомендуемые
+                  </button>
+                  <div class="recommend-panel" id="recommend-panel">
+                    <div class="recommend-panel-inner">
+                      <ul class="recommend-list" id="recommend-list"></ul>
+                      <button class="action action-quiet" id="recommend-save" type="button">В список</button>
+                    </div>
+                  </div>
+                </div>
+                <button class="action action-quiet" id="cancel-edit" type="button" hidden>
+                  Отмена
+                </button>
+              </div>
+            </form>
+
+            <div id="product-list" class="product-list">
+              <div id="product-list-inner" class="product-list-inner"></div>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="stats-title">
+            <div class="panel-head">
+              <h2 id="stats-title">Твоя статистика</h2>
+            </div>
+            <div class="usage-grid">
+              <div class="usage">
+                <div class="donut" id="usage-donut" style="--share: 0">
+                  <strong id="usage-percent">0%</strong>
+                </div>
+                <div>
+                  <p class="usage-label">Использовано продуктов</p>
+                  <p class="usage-note" id="usage-note">0% от всех</p>
+                </div>
+              </div>
+              <div class="usage">
+                <div class="donut donut-expired" id="expired-donut" style="--share: 0">
+                  <strong id="expired-percent">0%</strong>
+                </div>
+                <div>
+                  <p class="usage-label">Просрочено продуктов</p>
+                  <p class="usage-note" id="expired-note">0% от всех</p>
+                </div>
+              </div>
+            </div>
+            <div class="bars" id="usage-bars" aria-hidden="true"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="prices.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

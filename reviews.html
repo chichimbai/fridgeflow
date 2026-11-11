@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Отзывы — FridgeFlow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body class="page-reviews">
+    <div class="app">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M11.8 21c-4.6-5.1-6.4-9.1-3.5-13.3C12.8 8.4 16.2 12 16.8 16.4c-.9.2-1.9.6-2.8 1.2-.6.5-1.4.9-2.2 1.4Z"
+            />
+            <path
+              fill="currentColor"
+              opacity="0.72"
+              d="M12.1 20.7c1.3-3.9 4-6.7 8.2-7.7-.9 4.7-3.6 8.2-8.2 9v-1.3Z"
+            />
+          </svg>
+          <span>FridgeFlow</span>
+        </a>
+        <nav class="side-nav" aria-label="Разделы">
+          <a href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 4.2 4 10.4V20h5.2v-5.2h5.6V20H20v-9.6L12 4.2Z" />
+            </svg>
+            Главная
+          </a>
+          <a href="dashboard.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M7 3.5h10a2 2 0 0 1 2 2V20l-2.2-1.4L14.6 20l-2.6-1.4L9.4 20l-2.2-1.4L5 20V5.5a2 2 0 0 1 2-2Zm1.2 5h7.6v1.6H8.2V8.5Zm0 3.4h7.6v1.6H8.2v-1.6Z"
+              />
+            </svg>
+            Мой холодильник
+          </a>
+          <a href="recipes.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M5 10.2h14v1.1c0 3.6-3.1 6.5-7 6.5s-7-2.9-7-6.5v-1.1Zm1.8-3.4h10.4c-.3-1.7-1.8-2.8-5.2-2.8s-4.9 1.1-5.2 2.8ZM8 19.4h8v1.4H8v-1.4Z"
+              />
+            </svg>
+            Рецепты
+          </a>
+          <a href="reviews.html" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5Z" />
+            </svg>
+            Отзывы
+          </a>
+          <a href="cabinet.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 12.2a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8ZM5.2 19.2c.7-3 3.4-4.8 6.8-4.8s6.1 1.8 6.8 4.8v.8H5.2v-.8Z"
+              />
+            </svg>
+            Личный кабинет
+          </a>
+        </nav>
+        <p class="sidebar-note">Меньше отходов.<br />Больше пользы.</p>
+      </aside>
+
+      <main class="dashboard">
+        <header class="greeting">
+          <p class="eyebrow">FridgeFlow</p>
+          <h1>Отзывы</h1>
+          <p>Один отзыв на человека. Свой можно менять или удалить, чужой — скрыть только у себя.</p>
+        </header>
+
+        <section class="panel">
+          <form id="review-form" class="recipe-form">
+            <fieldset class="rating" id="star-picker">
+              <legend>Оценка сайта</legend>
+            </fieldset>
+            <label>
+              Ваш отзыв
+              <textarea name="text" maxlength="400" required placeholder="Коротко, как вам FridgeFlow"></textarea>
+            </label>
+            <p id="review-error" class="recipe-miss" hidden></p>
+            <div class="form-actions">
+              <button class="action" type="submit">Опубликовать</button>
+              <button class="action action-quiet" id="review-delete" type="button" hidden>Удалить</button>
+            </div>
+            <p id="review-confirm" class="review-confirm" hidden>
+              Удалить отзыв? Вернуть его потом не получится.
+              <button class="action" id="review-delete-yes" type="button">Да, удалить</button>
+              <button class="action action-quiet" id="review-delete-no" type="button">Нет</button>
+            </p>
+          </form>
+        </section>
+
+        <section class="panel" id="review-list" aria-live="polite"></section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="reviews.js"></script>
+  </body>
+</html>

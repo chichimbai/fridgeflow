@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FridgeFlow</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M11.8 21c-4.6-5.1-6.4-9.1-3.5-13.3C12.8 8.4 16.2 12 16.8 16.4c-.9.2-1.9.6-2.8 1.2-.6.5-1.4.9-2.2 1.4Z"
+          />
+          <path
+            fill="currentColor"
+            opacity="0.72"
+            d="M12.1 20.7c1.3-3.9 4-6.7 8.2-7.7-.9 4.7-3.6 8.2-8.2 9v-1.3Z"
+          />
+        </svg>
+        <span>FridgeFlow</span>
+      </a>
+      <nav class="top-nav" aria-label="Разделы">
+        <a href="index.html" aria-current="page">Главная</a>
+        <a href="#why">Возможности</a>
+        <a href="#chapters">Как это работает</a>
+        <a href="dashboard.html">Холодильник</a>
+        <a href="recipes.html">Рецепты</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="cabinet.html">Кабинет</a>
+      </nav>
+      <a class="pill" href="dashboard.html">Начать</a>
+    </header>
+
+    <main class="hero">
+      <div id="expiry-notice" class="expiry-notice" hidden></div>
+      <div class="hero-content">
+        <p class="logo reveal">Свежее остаётся дома</p>
+        <h1 class="reveal">Продукты не пропадают, пока о них помнят</h1>
+        <p class="lead reveal">
+          Один список того, что уже в холодильнике. Сроки видны сразу, и еда
+          уходит в тарелку, а не в мусор.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="cta" href="dashboard.html">Начать</a>
+          <button class="cta cta-secondary" id="open-chapters" type="button" aria-expanded="false">
+            Раскрыть возможности
+          </button>
+        </div>
+      </div>
+      <div class="mosaic" aria-hidden="true">
+        <img src="images/vegetables.jpg" alt="" />
+        <img src="images/greens.jpg" alt="" />
+        <img src="images/eggs.jpg" alt="" />
+        <img src="images/meal.jpg" alt="" />
+        <img src="images/board.jpg" alt="" />
+        <img src="images/roast.jpg" alt="" />
+      </div>
+    </main>
+
+    <section class="why" id="why">
+      <p class="kicker">Почему FridgeFlow</p>
+      <h2>Всё нужное — в одном списке</h2>
+      <div class="why-grid">
+        <article class="why-card">
+          <img src="images/vegetables.jpg" alt="Овощи и фрукты на столе" />
+          <h3>Широкий список продуктов</h3>
+          <p>Молоко, зелень, яйца и остатки ужина живут в одном месте.</p>
+        </article>
+        <article class="why-card">
+          <img src="images/prep.jpg" alt="Подготовка продуктов на кухне" />
+          <h3>Сроки всегда под рукой</h3>
+          <p>То, чему осталось два дня или меньше, видно без поиска по полкам.</p>
+        </article>
+        <article class="why-card">
+          <img src="images/pantry.jpg" alt="Запас продуктов на полке" />
+          <h3>Меньше повторных покупок</h3>
+          <p>Перед магазином видно, что уже есть дома.</p>
+        </article>
+        <article class="why-card why-card-accent">
+          <p class="sale-kicker">Сегодня</p>
+          <p class="sale-title">Срок<br />на исходе</p>
+          <p>Сначала то, что испортится раньше всего.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="chapters" id="chapters">
+      <section class="chapter" tabindex="0" aria-labelledby="problem-title">
+        <p class="kicker">Проблема</p>
+        <h2 id="problem-title">Еда пропадает, пока о ней забывают</h2>
+        <div class="chapter-extra">
+          <div class="chapter-extra-inner">
+            <figure class="chapter-photo">
+              <img
+                src="images/vegetables.jpg"
+                alt="Овощи и фрукты, разложенные на деревянной доске"
+              />
+            </figure>
+            <p>
+              Продукты покупают с запасом, а потом теряют из виду. Без срока
+              годности под рукой зелень, молоко и вчерашний ужин оказываются
+              в мусоре.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" tabindex="0" aria-labelledby="place-title">
+        <p class="kicker">Одно место</p>
+        <h2 id="place-title">Всё, что есть дома, в одном списке</h2>
+        <div class="chapter-extra">
+          <div class="chapter-extra-inner">
+            <figure class="chapter-photo">
+              <img
+                src="images/greens.jpg"
+                alt="Овощи, авокадо и нут в миске на деревянном столе"
+              />
+            </figure>
+            <p>
+              FridgeFlow собирает продукты в одном месте. Видно, что уже есть
+              и сколько осталось, поэтому одно и то же не покупается снова.
+            </p>
+            <p class="pantry">Молоко, яйца, шпинат, йогурт</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" tabindex="0" aria-labelledby="expiry-title">
+        <p class="kicker">Сроки</p>
+        <h2 id="expiry-title">Срок годности больше не прячется на полке</h2>
+        <div class="chapter-extra">
+          <div class="chapter-extra-inner">
+            <figure class="chapter-photo">
+              <img src="images/eggs.jpg" alt="Яйца в картонном лотке крупным планом" />
+            </figure>
+            <p>
+              То, что испортится раньше, видно сразу. Сначала зелень и
+              молочное, потом всё, у чего ещё есть время.
+            </p>
+            <ul class="notes">
+              <li><span>Зелень</span><span class="soon">два дня</span></li>
+              <li><span>Йогурт</span><span>до пятницы</span></li>
+              <li><span>Молоко</span><span>на неделе</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" tabindex="0" aria-labelledby="cook-title">
+        <p class="kicker">Из того, что есть</p>
+        <h2 id="cook-title">Ужин начинается с холодильника</h2>
+        <div class="chapter-extra">
+          <div class="chapter-extra-inner">
+            <figure class="chapter-photo">
+              <img
+                src="images/meal.jpg"
+                alt="Тост со шпинатом, яйцом и авокадо"
+              />
+            </figure>
+            <p>
+              Рецепт собирается из продуктов, которые уже дома. Они уходят
+              в тарелку, пока срок годности ещё не вышел.
+            </p>
+            <p class="example">Омлет, шпинат и то, что осталось со вчера</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="ready">
+      <div>
+        <p class="logo">FridgeFlow</p>
+        <h2>Пора открыть холодильник и отметить, что ещё можно съесть</h2>
+      </div>
+      <a class="cta" href="dashboard.html">Открыть список</a>
+    </section>
+
+    <footer class="site-foot">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M11.8 21c-4.6-5.1-6.4-9.1-3.5-13.3C12.8 8.4 16.2 12 16.8 16.4c-.9.2-1.9.6-2.8 1.2-.6.5-1.4.9-2.2 1.4Z"
+          />
+        </svg>
+        <span>FridgeFlow</span>
+      </a>
+      <nav aria-label="Подвал">
+        <a href="index.html">Главная</a>
+        <a href="dashboard.html">Холодильник</a>
+        <a href="recipes.html">Рецепты</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="cabinet.html">Кабинет</a>
+      </nav>
+      <p>Меньше отходов. Больше пользы.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

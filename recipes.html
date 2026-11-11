@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Рецепты — FridgeFlow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body class="page-recipes">
+    <div class="app">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M11.8 21c-4.6-5.1-6.4-9.1-3.5-13.3C12.8 8.4 16.2 12 16.8 16.4c-.9.2-1.9.6-2.8 1.2-.6.5-1.4.9-2.2 1.4Z"
+            />
+            <path
+              fill="currentColor"
+              opacity="0.72"
+              d="M12.1 20.7c1.3-3.9 4-6.7 8.2-7.7-.9 4.7-3.6 8.2-8.2 9v-1.3Z"
+            />
+          </svg>
+          <span>FridgeFlow</span>
+        </a>
+
+        <nav class="side-nav" aria-label="Разделы">
+          <a href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 4.2 4 10.4V20h5.2v-5.2h5.6V20H20v-9.6L12 4.2Z"
+              />
+            </svg>
+            Главная
+          </a>
+          <a href="dashboard.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M7 3.5h10a2 2 0 0 1 2 2V20l-2.2-1.4L14.6 20l-2.6-1.4L9.4 20l-2.2-1.4L5 20V5.5a2 2 0 0 1 2-2Zm1.2 5h7.6v1.6H8.2V8.5Zm0 3.4h7.6v1.6H8.2v-1.6Z"
+              />
+            </svg>
+            Мой холодильник
+          </a>
+          <a href="recipes.html" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M5 10.2h14v1.1c0 3.6-3.1 6.5-7 6.5s-7-2.9-7-6.5v-1.1Zm1.8-3.4h10.4c-.3-1.7-1.8-2.8-5.2-2.8s-4.9 1.1-5.2 2.8ZM8 19.4h8v1.4H8v-1.4Z"
+              />
+            </svg>
+            Рецепты
+          </a>
+          <a href="reviews.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5Z" />
+            </svg>
+            Отзывы
+          </a>
+          <a href="cabinet.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 12.2a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8ZM5.2 19.2c.7-3 3.4-4.8 6.8-4.8s6.1 1.8 6.8 4.8v.8H5.2v-.8Z"
+              />
+            </svg>
+            Личный кабинет
+          </a>
+        </nav>
+
+        <p class="sidebar-note">Меньше отходов.<br />Больше пользы.</p>
+      </aside>
+
+      <main class="dashboard">
+        <header class="greeting">
+          <p class="eyebrow">FridgeFlow</p>
+          <h1>Рецепты</h1>
+          <p>Отметьте один или несколько типов и коротко напишите пожелание: диетический, сытный, быстрый или дешёвый. Карточка показывает краткое описание. Полный рецепт открывается кнопкой «Использовать этот».</p>
+        </header>
+
+        <section class="panel" aria-labelledby="recipe-form-title">
+          <div class="panel-head">
+            <h2 id="recipe-form-title">Какое блюдо приготовить</h2>
+          </div>
+          <form id="recipe-form" class="recipe-form">
+            <label>
+              Пожелание
+              <textarea
+                name="wish"
+                maxlength="200"
+                placeholder="Например, диетический, сытный, быстрый или дешёвый"
+              ></textarea>
+            </label>
+            <fieldset class="dish-types">
+              <legend>Тип блюда, можно несколько</legend>
+              <label><input type="checkbox" name="dish" value="salad" /><span>Салат</span></label>
+              <label><input type="checkbox" name="dish" value="soup" /><span>Суп</span></label>
+              <label><input type="checkbox" name="dish" value="hot" /><span>Горячее</span></label>
+              <label><input type="checkbox" name="dish" value="breakfast" /><span>Завтрак</span></label>
+              <label><input type="checkbox" name="dish" value="snack" /><span>Закуска</span></label>
+              <label><input type="checkbox" name="dish" value="side" /><span>Гарнир</span></label>
+              <label><input type="checkbox" name="dish" value="dessert" /><span>Десерт</span></label>
+              <label><input type="checkbox" name="dish" value="drink" /><span>Напиток</span></label>
+            </fieldset>
+            <button class="action" type="submit">Показать рецепты</button>
+          </form>
+        </section>
+
+        <section class="panel" id="recipe-result" aria-live="polite" hidden></section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="prices.js"></script>
+    <script src="recipes-data.js"></script>
+    <script src="recipes.js"></script>
+  </body>
+</html>
